@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnInvokeFlutter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开FlutterActivity"/>
+
+    <EditText
+        android:id="@+id/etParamInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="初次加载传递给Dart的数据"/>
+
+    <FrameLayout
+        android:id="@+id/someContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
