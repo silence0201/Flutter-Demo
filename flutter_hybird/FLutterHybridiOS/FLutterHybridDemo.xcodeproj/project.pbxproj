@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1046DD936F65DB7481A25F83 /* libPods-FLutterHybridDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4029457A4BD452C6793A8F7F /* libPods-FLutterHybridDemo.a */; };
+		6802DAE622894C32003C2020 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6802DAE522894C32003C2020 /* AppDelegate.m */; };
+		6802DAE922894C32003C2020 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6802DAE822894C32003C2020 /* ViewController.m */; };
+		6802DAEC22894C32003C2020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6802DAEA22894C32003C2020 /* Main.storyboard */; };
+		6802DAEE22894C34003C2020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6802DAED22894C34003C2020 /* Assets.xcassets */; };
+		6802DAF122894C34003C2020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6802DAEF22894C34003C2020 /* LaunchScreen.storyboard */; };
+		6802DAF422894C34003C2020 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6802DAF322894C34003C2020 /* main.m */; };
+		6802DAFE22894C34003C2020 /* FLutterHybridDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6802DAFD22894C34003C2020 /* FLutterHybridDemoTests.m */; };
+		6802DB0922894C34003C2020 /* FLutterHybridDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6802DB0822894C34003C2020 /* FLutterHybridDemoUITests.m */; };
+		68D5C037228AA1040007E871 /* HybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5C036228AA1040007E871 /* HybridViewController.m */; };
+		68D5C039228AA60D0007E871 /* HybridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D5C038228AA60D0007E871 /* HybridViewController.xib */; };
+		7AE9E6D6B2FB21A4364D0E89 /* libPods-FLutterHybridDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA73B3946DC0B4026F06F03B /* libPods-FLutterHybridDemoUITests.a */; };
+		82602287DF3EF5A37BD5A42F /* libPods-FLutterHybridDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDFE52DCB37C07D7DBA5AA8 /* libPods-FLutterHybridDemoTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6802DAFA22894C34003C2020 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6802DAD922894C32003C2020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6802DAE022894C32003C2020;
+			remoteInfo = FLutterHybridDemo;
+		};
+		6802DB0522894C34003C2020 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6802DAD922894C32003C2020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6802DAE022894C32003C2020;
+			remoteInfo = FLutterHybridDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		051085E5C1C061AE40ADF86E /* Pods-FLutterHybridDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLutterHybridDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLutterHybridDemoUITests/Pods-FLutterHybridDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4029457A4BD452C6793A8F7F /* libPods-FLutterHybridDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FLutterHybridDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BE2BFFD519405AD1AD3049A /* Pods-FLutterHybridDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLutterHybridDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLutterHybridDemoTests/Pods-FLutterHybridDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6802DAE122894C32003C2020 /* FLutterHybridDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLutterHybridDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6802DAE422894C32003C2020 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6802DAE522894C32003C2020 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6802DAE722894C32003C2020 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6802DAE822894C32003C2020 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6802DAEB22894C32003C2020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6802DAED22894C34003C2020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6802DAF022894C34003C2020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6802DAF222894C34003C2020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6802DAF322894C34003C2020 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6802DAF922894C34003C2020 /* FLutterHybridDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLutterHybridDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6802DAFD22894C34003C2020 /* FLutterHybridDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLutterHybridDemoTests.m; sourceTree = "<group>"; };
+		6802DAFF22894C34003C2020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6802DB0422894C34003C2020 /* FLutterHybridDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLutterHybridDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6802DB0822894C34003C2020 /* FLutterHybridDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLutterHybridDemoUITests.m; sourceTree = "<group>"; };
+		6802DB0A22894C34003C2020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68D5C035228AA1040007E871 /* HybridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HybridViewController.h; sourceTree = "<group>"; };
+		68D5C036228AA1040007E871 /* HybridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridViewController.m; sourceTree = "<group>"; };
+		68D5C038228AA60D0007E871 /* HybridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HybridViewController.xib; sourceTree = "<group>"; };
+		98B3C13567A04C41351E0C4F /* Pods-FLutterHybridDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLutterHybridDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLutterHybridDemoTests/Pods-FLutterHybridDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA695D03A27B4054AADE9C17 /* Pods-FLutterHybridDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLutterHybridDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLutterHybridDemoUITests/Pods-FLutterHybridDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6D076030AA0EAB2F908C43D /* Pods-FLutterHybridDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLutterHybridDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLutterHybridDemo/Pods-FLutterHybridDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CCDFE52DCB37C07D7DBA5AA8 /* libPods-FLutterHybridDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FLutterHybridDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39E6ED6BBF4A01E95BEB789 /* Pods-FLutterHybridDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLutterHybridDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLutterHybridDemo/Pods-FLutterHybridDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DA73B3946DC0B4026F06F03B /* libPods-FLutterHybridDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FLutterHybridDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6802DADE22894C32003C2020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1046DD936F65DB7481A25F83 /* libPods-FLutterHybridDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6802DAF622894C34003C2020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82602287DF3EF5A37BD5A42F /* libPods-FLutterHybridDemoTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6802DB0122894C34003C2020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AE9E6D6B2FB21A4364D0E89 /* libPods-FLutterHybridDemoUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18A0227D794E2B8AE360A20F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6D076030AA0EAB2F908C43D /* Pods-FLutterHybridDemo.debug.xcconfig */,
+				D39E6ED6BBF4A01E95BEB789 /* Pods-FLutterHybridDemo.release.xcconfig */,
+				4BE2BFFD519405AD1AD3049A /* Pods-FLutterHybridDemoTests.debug.xcconfig */,
+				98B3C13567A04C41351E0C4F /* Pods-FLutterHybridDemoTests.release.xcconfig */,
+				BA695D03A27B4054AADE9C17 /* Pods-FLutterHybridDemoUITests.debug.xcconfig */,
+				051085E5C1C061AE40ADF86E /* Pods-FLutterHybridDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		44FD4ED9095B751660CEE874 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4029457A4BD452C6793A8F7F /* libPods-FLutterHybridDemo.a */,
+				CCDFE52DCB37C07D7DBA5AA8 /* libPods-FLutterHybridDemoTests.a */,
+				DA73B3946DC0B4026F06F03B /* libPods-FLutterHybridDemoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6802DAD822894C32003C2020 = {
+			isa = PBXGroup;
+			children = (
+				6802DAE322894C32003C2020 /* FLutterHybridDemo */,
+				6802DAFC22894C34003C2020 /* FLutterHybridDemoTests */,
+				6802DB0722894C34003C2020 /* FLutterHybridDemoUITests */,
+				6802DAE222894C32003C2020 /* Products */,
+				18A0227D794E2B8AE360A20F /* Pods */,
+				44FD4ED9095B751660CEE874 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6802DAE222894C32003C2020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6802DAE122894C32003C2020 /* FLutterHybridDemo.app */,
+				6802DAF922894C34003C2020 /* FLutterHybridDemoTests.xctest */,
+				6802DB0422894C34003C2020 /* FLutterHybridDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6802DAE322894C32003C2020 /* FLutterHybridDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6802DAE422894C32003C2020 /* AppDelegate.h */,
+				6802DAE522894C32003C2020 /* AppDelegate.m */,
+				6802DAE722894C32003C2020 /* ViewController.h */,
+				6802DAE822894C32003C2020 /* ViewController.m */,
+				6802DAEA22894C32003C2020 /* Main.storyboard */,
+				6802DAED22894C34003C2020 /* Assets.xcassets */,
+				6802DAEF22894C34003C2020 /* LaunchScreen.storyboard */,
+				6802DAF222894C34003C2020 /* Info.plist */,
+				6802DAF322894C34003C2020 /* main.m */,
+				68D5C035228AA1040007E871 /* HybridViewController.h */,
+				68D5C036228AA1040007E871 /* HybridViewController.m */,
+				68D5C038228AA60D0007E871 /* HybridViewController.xib */,
+			);
+			path = FLutterHybridDemo;
+			sourceTree = "<group>";
+		};
+		6802DAFC22894C34003C2020 /* FLutterHybridDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6802DAFD22894C34003C2020 /* FLutterHybridDemoTests.m */,
+				6802DAFF22894C34003C2020 /* Info.plist */,
+			);
+			path = FLutterHybridDemoTests;
+			sourceTree = "<group>";
+		};
+		6802DB0722894C34003C2020 /* FLutterHybridDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6802DB0822894C34003C2020 /* FLutterHybridDemoUITests.m */,
+				6802DB0A22894C34003C2020 /* Info.plist */,
+			);
+			path = FLutterHybridDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6802DAE022894C32003C2020 /* FLutterHybridDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6802DB0D22894C34003C2020 /* Build configuration list for PBXNativeTarget "FLutterHybridDemo" */;
+			buildPhases = (
+				6802DB1622894FC3003C2020 /* ShellScript */,
+				C020AD8330D1C98513EBED1C /* [CP] Check Pods Manifest.lock */,
+				6802DADD22894C32003C2020 /* Sources */,
+				6802DADE22894C32003C2020 /* Frameworks */,
+				6802DADF22894C32003C2020 /* Resources */,
+				00A9D2D9AD8113CBEAAE1B44 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FLutterHybridDemo;
+			productName = FLutterHybridDemo;
+			productReference = 6802DAE122894C32003C2020 /* FLutterHybridDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6802DAF822894C34003C2020 /* FLutterHybridDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6802DB1022894C34003C2020 /* Build configuration list for PBXNativeTarget "FLutterHybridDemoTests" */;
+			buildPhases = (
+				61E45E9FFFF9505BC5472998 /* [CP] Check Pods Manifest.lock */,
+				6802DAF522894C34003C2020 /* Sources */,
+				6802DAF622894C34003C2020 /* Frameworks */,
+				6802DAF722894C34003C2020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6802DAFB22894C34003C2020 /* PBXTargetDependency */,
+			);
+			name = FLutterHybridDemoTests;
+			productName = FLutterHybridDemoTests;
+			productReference = 6802DAF922894C34003C2020 /* FLutterHybridDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6802DB0322894C34003C2020 /* FLutterHybridDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6802DB1322894C34003C2020 /* Build configuration list for PBXNativeTarget "FLutterHybridDemoUITests" */;
+			buildPhases = (
+				34F78439914FE9FAF8E8E3E2 /* [CP] Check Pods Manifest.lock */,
+				6802DB0022894C34003C2020 /* Sources */,
+				6802DB0122894C34003C2020 /* Frameworks */,
+				6802DB0222894C34003C2020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6802DB0622894C34003C2020 /* PBXTargetDependency */,
+			);
+			name = FLutterHybridDemoUITests;
+			productName = FLutterHybridDemoUITests;
+			productReference = 6802DB0422894C34003C2020 /* FLutterHybridDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6802DAD922894C32003C2020 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = lyy;
+				TargetAttributes = {
+					6802DAE022894C32003C2020 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					6802DAF822894C34003C2020 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 6802DAE022894C32003C2020;
+					};
+					6802DB0322894C34003C2020 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 6802DAE022894C32003C2020;
+					};
+				};
+			};
+			buildConfigurationList = 6802DADC22894C32003C2020 /* Build configuration list for PBXProject "FLutterHybridDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6802DAD822894C32003C2020;
+			productRefGroup = 6802DAE222894C32003C2020 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6802DAE022894C32003C2020 /* FLutterHybridDemo */,
+				6802DAF822894C34003C2020 /* FLutterHybridDemoTests */,
+				6802DB0322894C34003C2020 /* FLutterHybridDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6802DADF22894C32003C2020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6802DAF122894C34003C2020 /* LaunchScreen.storyboard in Resources */,
+				6802DAEE22894C34003C2020 /* Assets.xcassets in Resources */,
+				68D5C039228AA60D0007E871 /* HybridViewController.xib in Resources */,
+				6802DAEC22894C32003C2020 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6802DAF722894C34003C2020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6802DB0222894C34003C2020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00A9D2D9AD8113CBEAAE1B44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FLutterHybridDemo/Pods-FLutterHybridDemo-frameworks.sh",
+				"${PODS_ROOT}/../../flutter_module/.ios/Flutter/engine/Flutter.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLutterHybridDemo/Pods-FLutterHybridDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34F78439914FE9FAF8E8E3E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FLutterHybridDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61E45E9FFFF9505BC5472998 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FLutterHybridDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6802DB1622894FC3003C2020 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed\n";
+		};
+		C020AD8330D1C98513EBED1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FLutterHybridDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6802DADD22894C32003C2020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6802DAE922894C32003C2020 /* ViewController.m in Sources */,
+				6802DAF422894C34003C2020 /* main.m in Sources */,
+				68D5C037228AA1040007E871 /* HybridViewController.m in Sources */,
+				6802DAE622894C32003C2020 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6802DAF522894C34003C2020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6802DAFE22894C34003C2020 /* FLutterHybridDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6802DB0022894C34003C2020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6802DB0922894C34003C2020 /* FLutterHybridDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6802DAFB22894C34003C2020 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6802DAE022894C32003C2020 /* FLutterHybridDemo */;
+			targetProxy = 6802DAFA22894C34003C2020 /* PBXContainerItemProxy */;
+		};
+		6802DB0622894C34003C2020 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6802DAE022894C32003C2020 /* FLutterHybridDemo */;
+			targetProxy = 6802DB0522894C34003C2020 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6802DAEA22894C32003C2020 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6802DAEB22894C32003C2020 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6802DAEF22894C34003C2020 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6802DAF022894C34003C2020 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6802DB0B22894C34003C2020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6802DB0C22894C34003C2020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6802DB0E22894C34003C2020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D076030AA0EAB2F908C43D /* Pods-FLutterHybridDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA76DQ67HR;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = FLutterHybridDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XL.FLutterHybridDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6802DB0F22894C34003C2020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D39E6ED6BBF4A01E95BEB789 /* Pods-FLutterHybridDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA76DQ67HR;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = FLutterHybridDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XL.FLutterHybridDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6802DB1122894C34003C2020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BE2BFFD519405AD1AD3049A /* Pods-FLutterHybridDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA76DQ67HR;
+				INFOPLIST_FILE = FLutterHybridDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XL.FLutterHybridDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FLutterHybridDemo.app/FLutterHybridDemo";
+			};
+			name = Debug;
+		};
+		6802DB1222894C34003C2020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98B3C13567A04C41351E0C4F /* Pods-FLutterHybridDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA76DQ67HR;
+				INFOPLIST_FILE = FLutterHybridDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XL.FLutterHybridDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FLutterHybridDemo.app/FLutterHybridDemo";
+			};
+			name = Release;
+		};
+		6802DB1422894C34003C2020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA695D03A27B4054AADE9C17 /* Pods-FLutterHybridDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA76DQ67HR;
+				INFOPLIST_FILE = FLutterHybridDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XL.FLutterHybridDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FLutterHybridDemo;
+			};
+			name = Debug;
+		};
+		6802DB1522894C34003C2020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 051085E5C1C061AE40ADF86E /* Pods-FLutterHybridDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA76DQ67HR;
+				INFOPLIST_FILE = FLutterHybridDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XL.FLutterHybridDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FLutterHybridDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6802DADC22894C32003C2020 /* Build configuration list for PBXProject "FLutterHybridDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6802DB0B22894C34003C2020 /* Debug */,
+				6802DB0C22894C34003C2020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6802DB0D22894C34003C2020 /* Build configuration list for PBXNativeTarget "FLutterHybridDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6802DB0E22894C34003C2020 /* Debug */,
+				6802DB0F22894C34003C2020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6802DB1022894C34003C2020 /* Build configuration list for PBXNativeTarget "FLutterHybridDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6802DB1122894C34003C2020 /* Debug */,
+				6802DB1222894C34003C2020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6802DB1322894C34003C2020 /* Build configuration list for PBXNativeTarget "FLutterHybridDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6802DB1422894C34003C2020 /* Debug */,
+				6802DB1522894C34003C2020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6802DAD922894C32003C2020 /* Project object */;
+}
