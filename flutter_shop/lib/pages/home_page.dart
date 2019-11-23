@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import '../config/http_headers.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,6 +50,11 @@ class _HomePageState extends State<HomePage> {
 
   void _choicAction() {
     print("开始选择");
+
+    getByHeader().then((value){
+      print(value);
+    });
+
     if (typeController.text.toString() == '') {
       showDialog(
         context: context,
@@ -76,4 +82,19 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
+
+  Future getByHeader() async {
+    try {
+      print('向极客时间请求数据');
+      String url = 'https://time.geekbang.org/serv/v1/column/labels';
+      Response response;
+      Dio dio = Dio();
+      dio.options.headers = httpHeaders;
+      response = await dio.post(url);
+      return response.data;
+    } catch(e) {
+      print(e);
+    }
+  }
+
 }
