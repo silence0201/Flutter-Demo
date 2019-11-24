@@ -15,6 +15,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
 
   String homePageContent = '正在获取数据...';
 
+  int page = 1;
+  List<Map> hotGoodsList = [];
+
   @override
   bool get wantKeepAlive => true;
 
@@ -26,6 +29,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
         homePageContent = value.toString();
       });
     });
+    _getHotGoods();
     super.initState();
   }
 
@@ -70,6 +74,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                   FloorContent(floorGoodsList: floor2,),
                   FloorTitle(picture_address: floor3Title,),
                   FloorContent(floorGoodsList: floor3,),
+                  _hotGoods()
                 ],
               ),
             );
@@ -79,6 +84,83 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             );
           }
         },
+      ),
+    );
+  }
+  
+  void _getHotGoods() {
+    var formPage = {'page' : page};
+    request('homePageBelowConten',formData: formPage).then((val) {
+      var data = json.decode(val.toString());
+      List<Map> newGoodsList = (data['data'] as List).cast();
+      setState(() {
+        hotGoodsList.addAll(newGoodsList);
+        page++;
+      });
+    });
+  }
+
+  Widget hotTitle = Container(
+    margin: EdgeInsets.only(top: 10.0),
+    alignment: Alignment.center,
+    color: Colors.transparent,
+    child: Text('火爆专区'),
+  );
+
+  Widget _wrapList() {
+    if (hotGoodsList.length != 0) {
+      List<Widget> listWidget = hotGoodsList.map((val) {
+        return InkWell(
+          onTap: (){},
+          child: Container(
+            width: ScreenUtil().setWidth(372),
+            color: Colors.white,
+            padding: EdgeInsets.all(5.0),
+            margin: EdgeInsets.only(bottom: 3.0),
+            child: Column(
+              children: <Widget>[
+                Image.network(val['image'],width: ScreenUtil().setWidth(370),),
+                Text(
+                  val['name'],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Colors.pink,
+                    fontSize: ScreenUtil().setSp(26)
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Text('￥${val['mallPrice']}'),
+                    Text(
+                      '￥${val['price']}',
+                      style: TextStyle(color:Colors.black26,decoration: TextDecoration.lineThrough),
+                    )
+                  ],
+                )
+
+              ],
+            ),
+          ),
+        );
+      }).toList();
+
+      return Wrap(
+        spacing: 2,
+        children: listWidget,
+      );
+    } else {
+      return Text('');
+    }
+  }
+
+  Widget _hotGoods() {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          hotTitle,
+          _wrapList()
+        ],
       ),
     );
   }
@@ -347,4 +429,6 @@ class FloorContent extends StatelessWidget {
     );
   }
 }
+
+
 
