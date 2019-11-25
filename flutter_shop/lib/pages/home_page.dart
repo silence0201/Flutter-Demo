@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_shop/service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -29,7 +30,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
         homePageContent = value.toString();
       });
     });
-    _getHotGoods();
     super.initState();
   }
 
@@ -60,23 +60,44 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             List<Map> floor2 = (data['data']['floor2'] as List).cast(); //楼层1商品和图片
             List<Map> floor3 = (data['data']['floor3'] as List).cast(); //楼层1商品和图片
 
-            return SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  SwiperDiy(swiperDateList: swiper),
-                  TopNavigator(nagvigatorList: navgatorList,),
-                  AdBanner(adPicture: adPicture,),
-                  LeaderPhone(leaderImage: leaderImage,leaderPhone: leaderPhone,),
-                  Recommend(recommendList: recommendList,),
-                  FloorTitle(picture_address: floor1Title,),
-                  FloorContent(floorGoodsList: floor1,),
-                  FloorTitle(picture_address: floor2Title,),
-                  FloorContent(floorGoodsList: floor2,),
-                  FloorTitle(picture_address: floor3Title,),
-                  FloorContent(floorGoodsList: floor3,),
-                  _hotGoods()
+
+
+            return EasyRefresh(
+              footer: ClassicalFooter(
+                bgColor: Colors.white,
+                textColor: Colors.pink,
+                noMoreText:'',
+                loadedText: '加载中...',
+                loadText: '上拉加载'
+              ),
+
+              child: ListView(
+                  children: <Widget>[
+                    SwiperDiy(swiperDateList: swiper),
+                    TopNavigator(nagvigatorList: navgatorList,),
+                    AdBanner(adPicture: adPicture,),
+                    LeaderPhone(leaderImage: leaderImage,leaderPhone: leaderPhone,),
+                    Recommend(recommendList: recommendList,),
+                    FloorTitle(picture_address: floor1Title,),
+                    FloorContent(floorGoodsList: floor1,),
+                    FloorTitle(picture_address: floor2Title,),
+                    FloorContent(floorGoodsList: floor2,),
+                    FloorTitle(picture_address: floor3Title,),
+                    FloorContent(floorGoodsList: floor3,),
+                    _hotGoods()
                 ],
               ),
+              onLoad: () async {
+                var formPage = {'page' : page};
+                request('homePageBelowConten',formData: formPage).then((val) {
+                  var data = json.decode(val.toString());
+                  List<Map> newGoodsList = (data['data'] as List).cast();
+                  setState(() {
+                    hotGoodsList.addAll(newGoodsList);
+                    page++;
+                  });
+                });
+              },
             );
           } else {
             return Center(
@@ -87,18 +108,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
       ),
     );
   }
-  
-  void _getHotGoods() {
-    var formPage = {'page' : page};
-    request('homePageBelowConten',formData: formPage).then((val) {
-      var data = json.decode(val.toString());
-      List<Map> newGoodsList = (data['data'] as List).cast();
-      setState(() {
-        hotGoodsList.addAll(newGoodsList);
-        page++;
-      });
-    });
-  }
+
 
   Widget hotTitle = Container(
     margin: EdgeInsets.only(top: 10.0),
@@ -226,6 +236,7 @@ class TopNavigator extends StatelessWidget {
       padding: EdgeInsets.all(3.0),
       child: GridView.count(
         crossAxisCount: 5,
+        physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.all(5.0),
         children: nagvigatorList.map((item) {
           return _gridViewItemUI(context, item);

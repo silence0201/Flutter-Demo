@@ -15,6 +15,7 @@ dependencies:
   flutter_swiper : ^1.1.4
   flutter_screenutil: ^0.6.1
   url_launcher: ^5.2.5
+  flutter_easyrefresh: ^2.0.4
 
 dev_dependencies:
   flutter_test:
