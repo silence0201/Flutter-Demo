@@ -10,8 +10,13 @@ import 'package:flutter_shop/model/category.dart';
 class ChildCategory with ChangeNotifier {
   List<BxMallSubDtoBean> chidCategoryList = [];
 
-  setChildCategory(List list) {
-    chidCategoryList = list;
+  setChildCategory(List<BxMallSubDtoBean> list) {
+    BxMallSubDtoBean all = BxMallSubDtoBean();
+    all.mallCategoryId = '00';
+    all.mallSubId = '00';
+    all.mallSubName = '全部';
+    chidCategoryList = [all];
+    chidCategoryList.addAll(list);
     notifyListeners();
   }
 }
