@@ -9,14 +9,27 @@ import 'package:flutter_shop/model/category.dart';
 
 class ChildCategory with ChangeNotifier {
   List<BxMallSubDtoBean> chidCategoryList = [];
+  int childIndex = 0; // 子类高亮索引
 
-  setChildCategory(List<BxMallSubDtoBean> list) {
+  String categoryId;
+  String subId;
+
+  setChildCategory(List<BxMallSubDtoBean> list, [String categoryId = '4']) {
+    childIndex = 0;
+    this.categoryId = categoryId;
     BxMallSubDtoBean all = BxMallSubDtoBean();
-    all.mallCategoryId = '00';
-    all.mallSubId = '00';
+    all.mallCategoryId = categoryId;
+    all.mallSubId = '';
     all.mallSubName = '全部';
     chidCategoryList = [all];
     chidCategoryList.addAll(list);
+    notifyListeners();
+  }
+
+  // 改变子类索引
+  changeChildIndex(index, [Id = '']) {
+    childIndex = index;
+    subId = Id;
     notifyListeners();
   }
 }
