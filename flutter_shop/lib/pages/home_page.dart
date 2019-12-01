@@ -1,8 +1,10 @@
 import 'dart:convert';
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_shop/router/routers.dart';
 import 'package:flutter_shop/service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -121,7 +123,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
     if (hotGoodsList.length != 0) {
       List<Widget> listWidget = hotGoodsList.map((val) {
         return InkWell(
-          onTap: (){},
+          onTap: (){
+            Application.router.navigateTo(context, '/detail?id=${val['goodsId']}', transition: TransitionType.cupertino);
+          },
           child: Container(
             width: ScreenUtil().setWidth(372),
             color: Colors.white,
@@ -185,9 +189,9 @@ class SwiperDiy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    print('像素密度:${ScreenUtil.pixelRatio}');
-    print('设备的高:${ScreenUtil.screenHeight}');
-    print('设备的宽:${ScreenUtil.screenWidth}');
+//    print('像素密度:${ScreenUtil.pixelRatio}');
+//    print('设备的高:${ScreenUtil.screenHeight}');
+//    print('设备的宽:${ScreenUtil.screenWidth}');
 
     return Container(
       height: ScreenUtil().setHeight(320),

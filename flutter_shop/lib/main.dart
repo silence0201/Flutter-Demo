@@ -1,7 +1,9 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_shop/provide/category_goods_list.dart';
 import 'package:flutter_shop/provide/child_category.dart';
+import 'package:flutter_shop/router/routers.dart';
 import 'package:provide/provide.dart';
 
 import './pages/index_page.dart';
@@ -10,6 +12,7 @@ import './pages/index_page.dart';
 void main() {
   // 顶层注册状态管理
   var providers = registerProviders();
+
   runApp(ProviderNode(child: MyApp(),providers: providers,));
 }
 
@@ -25,12 +28,22 @@ Providers registerProviders() {
   return providers;
 }
 
+void initRouter() {
+  // 路由
+  final router = Router();
+  Routes.configureRoutes(router);
+  Application.router = router;
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    initRouter();
+
     return Container(
       child: MaterialApp(
         title: '电商项目',
+        onGenerateRoute: Application.router.generator,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.pink
