@@ -13,9 +13,12 @@ class ChildCategory with ChangeNotifier {
 
   String categoryId;
   String subId;
-
+  int page;// 列表页数
+  String noMoreText;
   setChildCategory(List<BxMallSubDtoBean> list, [String categoryId = '4']) {
     childIndex = 0;
+    page = 1;
+    noMoreText = '';
     this.categoryId = categoryId;
     BxMallSubDtoBean all = BxMallSubDtoBean();
     all.mallCategoryId = categoryId;
@@ -30,6 +33,18 @@ class ChildCategory with ChangeNotifier {
   changeChildIndex(index, [Id = '']) {
     childIndex = index;
     subId = Id;
+    page = 1;
+    noMoreText = '';
+    notifyListeners();
+  }
+
+  // 增加page的方法
+  addPage() {
+    page++;
+  }
+
+  changeNoMore(String text) {
+    noMoreText = text;
     notifyListeners();
   }
 }

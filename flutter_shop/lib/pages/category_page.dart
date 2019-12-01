@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_shop/model/category.dart';
 import 'package:flutter_shop/model/category_good_list.dart';
 import 'package:flutter_shop/provide/category_goods_list.dart';
 import 'package:flutter_shop/provide/child_category.dart';
 import 'package:flutter_shop/service/service_method.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provide/provide.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -73,6 +75,17 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
     );
   }
 
+  void showLongToast() {
+    Fluttertoast.showToast(
+      msg: "クィ異才",
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.CENTER,
+      backgroundColor: Colors.pink,
+      textColor: Colors.white,
+      fontSize: 16.0
+    );
+  }
+
   Widget _leftInkWell(int index) {
     bool isHight = false;
     isHight = (index == listIndex);
@@ -82,6 +95,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
         setState(() {
           listIndex = index;
         });
+        showLongToast();
         List<BxMallSubDtoBean> childList = list[index].bxMallSubDto;
         String categoryId = list[index].mallCategoryId;
         Provide.value<ChildCategory>(context).setChildCategory(childList,categoryId);
@@ -212,21 +226,46 @@ class CategoryGoods extends StatefulWidget {
 
 class _CategoryGoodsState extends State<CategoryGoods> {
 
+
+  var scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Provide<CategoryGoodsList>(
       builder: (context,child,data){
+        try {
+          if (Provide.value<ChildCategory>(context).page == 1) {
+            scrollController.jumpTo(0.0);
+          }
+        } catch(e) {
+          print('第一次初始化');
+        }
         if (data?.goodList.length > 0) {
           return Expanded(
             child: Container(
               width: ScreenUtil().setWidth(570),
-              child: ListView.builder(
-                itemCount: data.goodList.length,
-                itemBuilder: (context,index) {
-                  Good good = data.goodList[index];
-                  return _itemWidget(good);
+              child: EasyRefresh(
+                footer: ClassicalFooter(
+                  bgColor: Colors.white,
+                  textColor: Colors.pink,
+                  infoColor: Colors.pink,
+                  noMoreText: Provide.value<ChildCategory>(context).noMoreText,
+                  loadText: '开始加载',
+                  loadingText: '正在加载',
+                  loadReadyText: '上拉加载'
+                ),
+                child: ListView.builder(
+                  controller: scrollController,
+                  itemCount: data.goodList.length,
+                  itemBuilder: (context,index) {
+                    Good good = data.goodList[index];
+                    return _itemWidget(good);
+                  },
+                ),
+                onLoad: () async {
+                  _getMoreList();
                 },
-              ),
+              )
             ),
           );
         } else {
@@ -234,12 +273,9 @@ class _CategoryGoodsState extends State<CategoryGoods> {
             child: Text('暂时没有数据'),
           );
         }
-
-
       },
     );
   }
-
 
   Widget _goodImage(Good good) {
     return Container(
@@ -311,6 +347,28 @@ class _CategoryGoodsState extends State<CategoryGoods> {
         ),
       ),
     );
+  }
+
+  //上拉加载更多的方法
+  void _getMoreList() async{
+
+    Provide.value<ChildCategory>(context).addPage();
+    var params={
+      'categoryId':Provide.value<ChildCategory>(context).categoryId,
+      'categorySubId':Provide.value<ChildCategory>(context).subId,
+      'page':Provide.value<ChildCategory>(context).page
+    };
+
+    await request('getMallGoods',formData: params).then((value){
+      var data = json.decode(value.toString());
+      CategoryGoodList goodList = CategoryGoodList.fromMap(data);
+      if (goodList.data == null) {
+        Provide.value<ChildCategory>(context).changeNoMore('没有更多数据');
+      } else {
+        Provide.value<CategoryGoodsList>(context).setGoodsList(goodList.data);
+      }
+
+    });
   }
 }
 
