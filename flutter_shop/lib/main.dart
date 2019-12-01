@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_shop/provide/category_goods_list.dart';
 import 'package:flutter_shop/provide/child_category.dart';
 import 'package:provide/provide.dart';
 
@@ -14,9 +15,11 @@ void main() {
 
 Providers registerProviders() {
   var childCategory = ChildCategory();
+  var categoryGoodsList = CategoryGoodsList();
   var providers = Providers();
 
   providers
+    ..provide(Provider<CategoryGoodsList>.value(categoryGoodsList))
     ..provide(Provider<ChildCategory>.value(childCategory));
 
   return providers;
