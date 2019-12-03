@@ -198,7 +198,13 @@ class SwiperDiy extends StatelessWidget {
       width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemBuilder: (BuildContext contexn, int index){
-          return Image.network("${swiperDateList[index]['image']}",fit: BoxFit.cover,);
+
+          return InkWell(
+            onTap: () {
+              Application.router.navigateTo(context, '/detail?id=${swiperDateList[index]['goodsId']}', transition: TransitionType.cupertino);
+            },
+            child: Image.network("${swiperDateList[index]['image']}",fit: BoxFit.cover,),
+          );
         },
         itemCount: swiperDateList.length,
         pagination: SwiperPagination(),
@@ -321,7 +327,9 @@ class Recommend extends StatelessWidget {
   // 商品单独项
   Widget _item(int index){
     return InkWell(
-      onTap: () {},
+      onTap: () {
+
+      },
       child: Container(
         height: ScreenUtil().setHeight(320),
         width: ScreenUtil().setWidth(250),

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/provide/detail_info.dart';
+import 'package:provide/provide.dart';
 
 /// * Project Name:flutter_shop
 /// * Package Name:pages
@@ -19,13 +21,33 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){Navigator.pop(context);} ,
+        ),
         title:Text('商品详情')
       ),
-      body: Container(
-        child: Center(
-          child: Text('商品ID,${goodsId}'),
-        ),
+      body: FutureBuilder(
+        future: _getBackInfo(context),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Container(
+              child: Column(
+                children: <Widget>[
+                  Text('商品ID${goodsId}'),
+                ],
+              ),
+            );
+          } else {
+            return Text('加载中....');
+          }
+        },
       ),
     );
+  }
+  
+  Future _getBackInfo(BuildContext context) async {
+    await Provide.value<DetailsInfo>(context).getGoodsInfo(goodsId);
+    return '完成加载...';
   }
 }
