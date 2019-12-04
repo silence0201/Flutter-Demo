@@ -15,12 +15,27 @@ import 'package:flutter_shop/service/service_method.dart';
 class DetailsInfo with ChangeNotifier {
   DetailsModel goodsInfo = null;
 
-  getGoodsInfo(String id) {
+  bool isLeft = true;
+  bool isRight = false;
+
+  changeLeftAndRight(String changeState) {
+    if (changeState == 'left') {
+      isLeft = true;
+      isRight = false;
+    } else {
+      isLeft = false;
+      isRight = true;
+    }
+    notifyListeners();
+  }
+
+  getGoodsInfo(String id) async {
     var formate = {'goodId' : id};
     request('getGoodDetailById',formData: formate).then((value){
       var responseData = json.decode(value.toString());
       goodsInfo = DetailsModel.fromJson(responseData);
-      print(responseData);
+//      print(responseData);
+      notifyListeners();
     });
   }
 }
