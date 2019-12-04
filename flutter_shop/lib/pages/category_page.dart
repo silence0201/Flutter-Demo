@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_shop/model/category.dart';
 import 'package:flutter_shop/model/category_good_list.dart';
 import 'package:flutter_shop/provide/category_goods_list.dart';
 import 'package:flutter_shop/provide/child_category.dart';
+import 'package:flutter_shop/router/routers.dart';
 import 'package:flutter_shop/service/service_method.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provide/provide.dart';
@@ -322,7 +324,9 @@ class _CategoryGoodsState extends State<CategoryGoods> {
 
   Widget _itemWidget(Good good) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Application.router.navigateTo(context, '/detail?id=${good.goodsId}',transition: TransitionType.cupertino);
+      },
       child: Container(
         padding: EdgeInsets.only(top: 5.0,bottom: 5.0),
         decoration: BoxDecoration(

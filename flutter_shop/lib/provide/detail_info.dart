@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:dio/dio.dart';
 /// * Project Name:flutter_shop
 /// * Package Name:provide
 /// * File Name: detail_info.dart
