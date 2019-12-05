@@ -9,6 +9,7 @@ import 'package:flutter_shop/pages/details_page/detail_web.dart';
 import 'package:flutter_shop/provide/detail_info.dart';
 import 'package:provide/provide.dart';
 
+
 /// * Project Name:flutter_shop
 /// * Package Name:pages
 /// * File Name: details_page.dart
