@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_shop/pages/details_page/detail_bottom.dart';
 import 'package:flutter_shop/pages/details_page/detail_explain.dart';
 import 'package:flutter_shop/pages/details_page/detail_tabbar.dart';
 import 'package:flutter_shop/pages/details_page/detail_top_area.dart';
@@ -35,14 +37,29 @@ class DetailsPage extends StatelessWidget {
         future: _getBackInfo(context),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Container(
-              child: ListView(
+            return SafeArea(
+              bottom: true,
+              left: true,
+              child: Stack(
                 children: <Widget>[
-                  DetailsTopArea(),
-                  DetailExplain(),
-                  DetailsTabBar(),
-                  DetailWeb(),
-                  Text('商品ID${goodsId}'),
+                  Container(
+                    margin: EdgeInsets.only(bottom: ScreenUtil().setHeight(80)),
+                    child: ListView(
+                      children: <Widget>[
+                        DetailsTopArea(),
+                        DetailExplain(),
+                        DetailsTabBar(),
+                        DetailWeb(),
+                        Text('商品ID${goodsId}'),
+                      ],
+                    ),
+                  ),
+
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    child: DetailsBottom(),
+                  )
                 ],
               ),
             );
