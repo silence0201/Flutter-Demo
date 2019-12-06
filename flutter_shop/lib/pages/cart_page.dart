@@ -1,78 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/model/cart_info.dart';
+import 'package:flutter_shop/pages/cart_page/cart_item.dart';
+import 'package:flutter_shop/provide/cart.dart';
+import 'package:provide/provide.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CartPage extends StatefulWidget {
-  @override
-  _CartPageState createState() => _CartPageState();
-}
-
-class _CartPageState extends State<CartPage> {
-
-  List<String> testList = [];
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _show();
-  }
-
+class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Perference'),
+        title: Text('购物车'),
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: 500,
-            child: ListView.builder(
-              itemCount: testList.length,
+      body: FutureBuilder(
+        future: _getCartInfo(context),
+        builder: (context,snapshot){
+          if (snapshot.hasData) {
+            List<CartInfo> cartList = Provide.value<Cart>(context).cartInfos;
+            return ListView.builder(
+              itemCount: cartList.length,
               itemBuilder: (context,index){
-                return ListTile(
-                  title: Text(testList[index]),
-                );
-              }),
-          ),
-          RaisedButton(
-            onPressed: _add,
-            child: Text('增加'),
-          ),
-          RaisedButton(
-            onPressed: _clear,
-            child: Text('删除'),
-          )
-        ],
+                return CartItem(cartList[index]);
+              },
+            );
+          } else {
+            return Text('正在加载');
+          }
+        },
       ),
     );
   }
 
-  // 增加方法
-  _add() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String tmp = 'Hello,World';
-    testList.add(tmp);
-    prefs.setStringList('TestInfo', testList);
-    _show();
-  }
-
-  // 查询
-  _show() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.getStringList('TestInfo') != null) {
-      setState(() {
-        testList = prefs.getStringList("TestInfo");
-      });
-    }
-  }
-
-  // 删除
-  _clear() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.remove('TestInfo');
-    setState(() {
-      testList = [];
-    });
+  Future<String> _getCartInfo(BuildContext context) async {
+    await Provide.value<Cart>(context).getCartInfo();
+    return 'end';
   }
 }
+
