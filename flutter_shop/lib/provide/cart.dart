@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_shop/model/cart_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
@@ -11,6 +12,8 @@ import 'dart:convert';
 
 class Cart with ChangeNotifier {
   String cartString = "[]";
+
+  List<CartInfo> cartInfos = [];
 
   save(goodsId,goodsName,count,price,image) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -28,13 +31,17 @@ class Cart with ChangeNotifier {
     });
 
     if (!isHave) {
-      tmpLis.add({
+      Map<String, dynamic> newGoods = {
         'goodsId' : goodsId,
         'goodsName' : goodsName,
         'count' : count,
         'price' : price,
         'image' : image
-      });
+      };
+
+      tmpLis.add(newGoods);
+
+      cartInfos.add(CartInfo.fromMap(newGoods));
     }
 
     cartString = json.encode(tmpLis).toString();
@@ -46,7 +53,22 @@ class Cart with ChangeNotifier {
   remove() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.remove('cartInfo');
+    cartInfos = [];
     print('清空完成') ;
+    notifyListeners();
+  }
+
+  getCartInfo() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    cartString = preferences.getString('cartInfo');
+    cartInfos = [];
+    if (cartString != null) {
+      List<Map> tmpList = (json.decode(cartString.toString()) as List).cast();
+      tmpList.forEach((item){
+        cartInfos.add(CartInfo.fromMap(item));
+      });
+    }
+
     notifyListeners();
   }
 }
