@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_shop/provide/cart.dart';
 import 'package:flutter_shop/provide/category_goods_list.dart';
 import 'package:flutter_shop/provide/child_category.dart';
+import 'package:flutter_shop/provide/current_index.dart';
 import 'package:flutter_shop/provide/detail_info.dart';
 import 'package:flutter_shop/router/routers.dart';
 import 'package:provide/provide.dart';
@@ -23,6 +24,7 @@ Providers registerProviders() {
   var categoryGoodsList = CategoryGoodsList();
   var detailInfo = DetailsInfo();
   var cart = Cart();
+  var currentIndex = CurrentIndex();
 
   var providers = Providers();
 
@@ -30,6 +32,7 @@ Providers registerProviders() {
     ..provide(Provider<DetailsInfo>.value(detailInfo))
     ..provide(Provider<CategoryGoodsList>.value(categoryGoodsList))
     ..provide(Provider<Cart>.value(cart))
+    ..provide(Provider<CurrentIndex>.value(currentIndex))
     ..provide(Provider<ChildCategory>.value(childCategory));
 
   return providers;
