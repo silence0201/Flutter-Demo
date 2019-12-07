@@ -8,6 +8,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_shop/model/cart_info.dart';
+import 'package:flutter_shop/pages/cart_page/cart_count.dart';
+import 'package:flutter_shop/provide/cart.dart';
+import 'package:provide/provide.dart';
 
 class CartItem extends StatelessWidget {
 
@@ -33,7 +36,7 @@ class CartItem extends StatelessWidget {
           _cartCheckBt(),
           _cartInfo(),
           _cartName(),
-          _cartPrice()
+          _cartPrice(context)
         ],
       ),
     );
@@ -43,7 +46,7 @@ class CartItem extends StatelessWidget {
   Widget _cartCheckBt() {
     return Container(
       child: Checkbox(
-        value: true,
+        value: item.isCheck,
         activeColor: Colors.pink,
         onChanged: (bool val) {
 
@@ -73,13 +76,14 @@ class CartItem extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(item.goodsName),
+          CartCount()
         ],
       ),
     );
   }
 
   // 价格
-  Widget _cartPrice() {
+  Widget _cartPrice(context) {
     return Container(
       width: ScreenUtil().setWidth(120),
       alignment: Alignment.centerRight,
@@ -88,7 +92,9 @@ class CartItem extends StatelessWidget {
           Text('价格: ${item.price}'),
           Container(
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Provide.value<Cart>(context).deleteOneGoods(item.goodsId);
+              },
               child: Icon(
                 Icons.delete_forever,
                 color: Colors.red,

@@ -10,6 +10,7 @@ class CartInfo {
   int count;
   double price;
   String image;
+  bool isCheck;
 
   static CartInfo fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
@@ -19,6 +20,7 @@ class CartInfo {
     cartInfoBean.count = map['count'];
     cartInfoBean.price = map['price'];
     cartInfoBean.image = map['image'];
+    cartInfoBean.isCheck = map['isCheck'];
     return cartInfoBean;
   }
 
@@ -28,5 +30,6 @@ class CartInfo {
     "count": count,
     "price": price,
     "image": image,
+    "isCheck": isCheck,
   };
 }
