@@ -9,6 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartCount extends StatelessWidget {
+
+  final String goodId;
+
+
+  CartCount(this.goodId);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,15 +25,15 @@ class CartCount extends StatelessWidget {
       ),
       child: Row(
         children: <Widget>[
-          _reduceBtn(),
-          _middleCount(),
-          _addBtn()
+          _reduceBtn(context),
+          _middleCount(context),
+          _addBtn(context)
         ],
       ),
     );
   }
 
-  Widget _reduceBtn() {
+  Widget _reduceBtn(context) {
     return InkWell(
       onTap: () {},
       child: Container(
@@ -45,7 +51,7 @@ class CartCount extends StatelessWidget {
     );
   }
 
-  Widget _middleCount() {
+  Widget _middleCount(context) {
     return Container(
       width: ScreenUtil().setWidth(70),
       height: ScreenUtil().setHeight(45),
@@ -55,7 +61,7 @@ class CartCount extends StatelessWidget {
     );
   }
 
-  Widget _addBtn() {
+  Widget _addBtn(context) {
     return InkWell(
       onTap: () {},
       child: Container(

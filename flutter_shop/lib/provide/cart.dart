@@ -15,6 +15,9 @@ class Cart with ChangeNotifier {
 
   List<CartInfo> cartInfos = [];
 
+  double allPrice = 0;// 总价格
+  int allCount = 0; // 总数量
+
   save(goodsId,goodsName,count,price,image) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     cartString = prefs.getString('cartInfo');
@@ -65,7 +68,13 @@ class Cart with ChangeNotifier {
     cartInfos = [];
     if (cartString != null) {
       List<Map> tmpList = (json.decode(cartString.toString()) as List).cast();
+      allPrice = 0;
+      allCount = 0;
       tmpList.forEach((item){
+        if (item['isCheck']) {
+          allPrice += item['count'] * item['price'];
+          allCount += item['count'];
+        }
         cartInfos.add(CartInfo.fromMap(item));
       });
     }
