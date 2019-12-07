@@ -31,21 +31,50 @@ class DetailsBottom extends StatelessWidget   {
       height: ScreenUtil().setHeight(80),
       child: Row(
         children: <Widget>[
-          InkWell(
-            onTap: () {
-              Provide.value<CurrentIndex>(context).changeIndex(2);
-              Navigator.of(context).pop();
-            },
-            child: Container(
-              width: ScreenUtil().setWidth(110),
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.shopping_cart,
-                size: 28,
-                color: Colors.red,
+          Stack(
+            children: <Widget>[
+              InkWell(
+                onTap: () {
+                  Provide.value<CurrentIndex>(context).changeIndex(2);
+                  Navigator.of(context).pop();
+                },
+                child: Container(
+                  width: ScreenUtil().setWidth(110),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.shopping_cart,
+                    size: 28,
+                    color: Colors.red,
+                  ),
+                ),
               ),
-            ),
+              Provide<Cart>(
+                builder: (context,child,val) {
+                  int goodsCount = val.allCount;
+                  return Positioned(
+                    top: 5,
+                    right: 5,
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(6, 3, 6, 3),
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        border: Border.all(width: 2,color: Colors.white),
+                        borderRadius: BorderRadius.circular(12.0)
+                      ),
+                      child: Text(
+                        '${goodsCount}',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil().setSp(22)
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              )
+            ],
           ),
+
           InkWell(
             onTap: () async{
               await Provide.value<Cart>(context).save(goodsId, goodsName, count, price, image);
